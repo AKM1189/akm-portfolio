@@ -109,11 +109,15 @@ contactForm.addEventListener("submit", () => {
 function opennav() {
   $(".res-navigation").show();
   $(".hamburger").hide();
+  $('.nav').removeClass('fixed top-30 right-0 bg-[#FCFCFC] transition-all w-full z-[100]');
+
 }
 
 function closenav() {
   $(".res-navigation").hide();
   $(".hamburger").show();
+  $('.nav').addClass('fixed top-30 right-0 bg-[#FCFCFC] transition-all w-full z-[100]');
+
 }
 
 $(".nav-menu").click(function () {
@@ -127,8 +131,11 @@ window.onscroll = function () {
   console.log(window.pageYOffset);
   if (window.pageYOffset > 500) {
     $(".top-scroll").removeClass("hidden");
+    $('.nav').addClass('fixed top-30 right-0 bg-[#FCFCFC] transition-all w-full z-[100]');
+    
   } else {
     $(".top-scroll").addClass("hidden");
+    $('.nav').removeClass('fixed top-30 right-0 bg-[#FCFCFC] transition-all w-full z-[100]');
   }
 };
 
